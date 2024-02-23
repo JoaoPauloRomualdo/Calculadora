@@ -2,20 +2,18 @@ import customtkinter
 from tkinter import END 
 #FUNÇÃO PARA ADICIONAR NUMEROS NA TELA
 def button_click(number):
-
-    # Concatena os números digitados
-    e.insert(END, str(number))
     #COLOCA O VALOR DO ENTRY DENTRO DE UMA VARIAVEL
     current = e.get()
     #SETA O NUMERO PARA ZERO A CADA NOVO NUMERO DIGITADO
     e.delete(0, END)
     #CONCATEÇÃO DOS NUMEROS 
     e.insert(0, str(current) + str(number))
-    
+    num_clicked = False
 
 #FUNÇÃO PARA LIMPAR A TELA
 def button_clear() :
     e.delete(0, END)
+    num_clicked =  False
 
 
 #FUNÇÃO PARA SOMAR
@@ -88,27 +86,27 @@ e = customtkinter.CTkEntry(
 e.grid(padx=10, pady=20,columnspan=3)
 e.grid(row=0, column=0, columnspan=5, pady=20)
 #------ BOTÃOS ------
-button_1 = customtkinter.CTkButton(root, text="1",fg_color="transparent",border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(1))
-button_2 = customtkinter.CTkButton(root, text="2",fg_color='transparent',border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(2))
-button_3 = customtkinter.CTkButton(root, text="3",fg_color='transparent',border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(3))
-button_4 = customtkinter.CTkButton(root, text="4",fg_color='transparent',border_width=1, hover_color="disabled",text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(4))
-button_5 = customtkinter.CTkButton(root, text="5",fg_color='transparent',border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(5))
-button_6 = customtkinter.CTkButton(root, text="6",fg_color='transparent',border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(6))
-button_7 = customtkinter.CTkButton(root, text="7",fg_color='transparent',border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(7))
-button_8 = customtkinter.CTkButton(root, text="8",fg_color='transparent',border_width=1, hover_color="disabled",text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(8))
-button_9 = customtkinter.CTkButton(root, text="9",fg_color='transparent',border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(9))
-button_0 = customtkinter.CTkButton(root, text="0",fg_color='transparent',border_width=1,hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(0))
+button_1 = customtkinter.CTkButton(root, text="1",fg_color="transparent",border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(1))
+button_2 = customtkinter.CTkButton(root, text="2",fg_color='transparent',border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(2))
+button_3 = customtkinter.CTkButton(root, text="3",fg_color='transparent',border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(3))
+button_4 = customtkinter.CTkButton(root, text="4",fg_color='transparent',border_width=1, hover_color="gray",text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(4))
+button_5 = customtkinter.CTkButton(root, text="5",fg_color='transparent',border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(5))
+button_6 = customtkinter.CTkButton(root, text="6",fg_color='transparent',border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(6))
+button_7 = customtkinter.CTkButton(root, text="7",fg_color='transparent',border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(7))
+button_8 = customtkinter.CTkButton(root, text="8",fg_color='transparent',border_width=1, hover_color="gray",text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(8))
+button_9 = customtkinter.CTkButton(root, text="9",fg_color='transparent',border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(9))
+button_0 = customtkinter.CTkButton(root, text="0",fg_color='transparent',border_width=1,hover_color="gray", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=lambda: button_click(0))
 
 
-button_c = customtkinter.CTkButton(root,text="C",fg_color="green",hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=button_clear)
+button_c = customtkinter.CTkButton(root,text="C",fg_color="green",hover_color="green", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=button_clear)
 
-button_add = customtkinter.CTkButton(root,text="+",fg_color="#B31312",hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=button_adding)
+button_add = customtkinter.CTkButton(root,text="+",fg_color="#B31312",hover_color="#B31312", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=button_adding)
 
-button_sub = customtkinter.CTkButton(root,text="-",fg_color="#116D6E",hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=sub)
+button_sub = customtkinter.CTkButton(root,text="-",fg_color="#116D6E",hover_color="#116D6E", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=sub)
 
-button_div = customtkinter.CTkButton(root,text="/",fg_color="#E9B824",hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=div)
+button_div = customtkinter.CTkButton(root,text="/",fg_color="#E9B824",hover_color="#E9B824", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=div)
 
-button_mult = customtkinter.CTkButton(root,text="*",fg_color="#0079FF",hover_color="disabled", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=mult)
+button_mult = customtkinter.CTkButton(root,text="*",fg_color="#0079FF",hover_color="#0079FF", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=mult)
 
 button_result = customtkinter.CTkButton(root,text="=",fg_color="#0802A3",hover_color="#0802A3", text_color='#f0f0f0',font=('Helvetica', 18, "bold"),command=result_button)
 
